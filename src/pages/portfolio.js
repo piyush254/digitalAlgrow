@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import WhatsappWidget from "../../components/WhatsappWidget";
+import { motion } from "framer-motion";
 
 function Portfolio() {
   const projects = [
@@ -53,91 +54,146 @@ function Portfolio() {
     <>
       <Header />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-20 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold">Our Portfolio</h1>
-        <p className="mt-4 text-lg max-w-2xl mx-auto text-orange-100">
-          Take a look at some of our successful projects where we transformed
-          brands, scaled businesses, and delivered measurable results.
-        </p>
-      </section>
+      {/* Hero Section with Animated Gradient */}
+      <motion.section
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative text-white py-24 text-center overflow-hidden"
+      >
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 animate-gradient-x"></div>
+        <div className="absolute inset-0 bg-[url('/images/portfolio-bg.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-lg">
+            Our Portfolio
+          </h1>
+          <p className="mt-6 text-lg text-orange-100 leading-relaxed">
+            Where creativity meets performance. Explore some of our finest
+            digital success stories crafted for modern brands.
+          </p>
+        </div>
+      </motion.section>
 
       {/* Portfolio Grid */}
-      <section className="bg-black py-16">
-        <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <section className="relative bg-black py-20">
+        <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-12 relative z-10">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true }}
+              className="relative group rounded-2xl overflow-hidden border border-orange-500/30 shadow-lg shadow-orange-500/10"
             >
-              <img
+              {/* Card Background */}
+              <div className="absolute inset-0 bg-black/50 backdrop-blur-xl"></div>
+
+              {/* Image */}
+              <motion.img
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.4 }}
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="relative w-full h-56 object-cover group-hover:opacity-90 transition"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">
+
+              {/* Content */}
+              <div className="relative p-6">
+                <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition">
                   {project.title}
                 </h3>
-                <span className="text-sm text-orange-500 font-medium">
+                <span className="block text-sm text-orange-500 font-medium mt-1">
                   {project.category}
                 </span>
-                <p className="text-gray-400 text-sm mt-2">
+                <p className="text-gray-300 text-sm mt-3 leading-relaxed">
                   {project.description}
                 </p>
               </div>
-            </div>
+
+              {/* Glow on Hover */}
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-orange-500/40 rounded-2xl transition"></div>
+            </motion.div>
           ))}
         </div>
+
+        {/* Floating Glow Orbs */}
+        <div className="absolute top-10 left-10 w-40 h-40 bg-orange-600/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-52 h-52 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
       </section>
 
-      {/* Featured Case Study */}
-      <section className="bg-gray-900 text-gray-300 py-20">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <img
+      {/* Case Study Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative py-20 bg-gradient-to-r from-gray-900 to-black text-gray-300"
+      >
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center bg-black/60 backdrop-blur-xl rounded-2xl shadow-lg border border-orange-500/20 p-10">
+          <motion.img
             src="/images/featured-project.jpg"
             alt="Featured Case Study"
             className="rounded-2xl shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
           />
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Featured Case Study: Fashion Brand Scaling
+            <h2 className="text-4xl font-extrabold text-white mb-4">
+              Case Study: Scaling a Fashion Brand
             </h2>
-            <p className="text-gray-400 mb-6">
-              We partnered with a rising fashion brand to create viral social
-              media campaigns and influencer collaborations that resulted in{" "}
-              <span className="text-orange-500 font-semibold">
-                3x revenue growth
-              </span>{" "}
-              within 6 months. Our strategic mix of organic and paid campaigns
-              delivered long-term brand loyalty.
+            <p className="text-gray-300 mb-6">
+              We partnered with a rising fashion label to design viral campaigns
+              and influencer collaborations that achieved{" "}
+              <span className="text-orange-400 font-semibold">300% growth</span>{" "}
+              in 6 months. Our data-driven approach combined creativity with
+              measurable impact.
             </p>
-            <button className="bg-gradient-to-r from-orange-600 to-orange-800 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-              View Full Case Study
-            </button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="bg-gradient-to-r from-orange-600 to-pink-600 px-6 py-3 rounded-full font-semibold text-white shadow-lg hover:opacity-90 transition"
+            >
+              View Full Story
+            </motion.button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-orange-800 text-white text-center py-20">
-        <h2 className="text-3xl md:text-4xl font-bold">
-          Let’s Create Success Stories Together
-        </h2>
-        <p className="mt-4 text-orange-100 max-w-xl mx-auto">
-          We’ve helped brands scale with proven digital strategies. Yours could
-          be the next success story!
-        </p>
-        <div className="mt-8 flex justify-center space-x-4">
-          <button className="flex items-center space-x-2 bg-black border border-orange-500 text-white rounded-full px-6 py-3 hover:bg-orange-600 transition">
-            <span>Get In Touch</span>
-          </button>
-          <button className="bg-gradient-to-r from-orange-600 to-orange-800 px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-            Book a Call
-          </button>
+      {/* CTA */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="relative bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 py-20 text-center text-white"
+      >
+        <div className="absolute inset-0 bg-[url('/images/cta-bg.jpg')] bg-cover bg-center opacity-20"></div>
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-extrabold">
+            Let’s Create Your Success Story
+          </h2>
+          <p className="mt-6 text-orange-100 text-lg leading-relaxed">
+            Our team has scaled brands globally with powerful digital marketing
+            strategies. Yours could be next.
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="bg-black/70 backdrop-blur-md border border-orange-500 px-8 py-3 rounded-full text-white font-semibold hover:bg-orange-600/90 transition"
+            >
+              Get In Touch
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="bg-gradient-to-r from-orange-600 to-pink-600 px-8 py-3 rounded-full font-semibold hover:opacity-90 transition"
+            >
+              Book a Call
+            </motion.button>
+          </div>
         </div>
-      </section>
-
+      </motion.section>
 
       <Footer />
     </>

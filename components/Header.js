@@ -10,27 +10,41 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold flex items-center space-x-1">
-          <Link href="/" scroll={false}> 
-            <span className="text-white">Digital</span>
-            <span className="text-orange-500">Algrow</span>
+          <Link href="/" scroll={false}>
+            <img src="logo website .png" alt="LOGO" className="w-[100px]" />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center bg-black border border-gray-700 rounded-full px-6 py-2 space-x-6 text-gray-300">
-          <Link href="/portfolio" scroll={true} className="hover:text-white transition">
+          <Link
+            href="/portfolio"
+            scroll={true}
+            className="hover:text-white transition"
+          >
             Portfolio
           </Link>
-          <Link href="/services" scroll={true} className="hover:text-white transition">
+          <Link
+            href="/services"
+            scroll={true}
+            className="hover:text-white transition"
+          >
             Services
           </Link>
-          <Link href="/success" scroll={true} className="hover:text-white transition">
+          <Link
+            href="/success"
+            scroll={true}
+            className="hover:text-white transition"
+          >
             Client Success
           </Link>
-          <Link href="/about" scroll={true} className="hover:text-white transition">
+          <Link
+            href="/about"
+            scroll={true}
+            className="hover:text-white transition"
+          >
             About Us
           </Link>
-          <FaWhatsapp className="text-green-500 text-lg cursor-pointer" />
         </nav>
 
         {/* Buttons */}
@@ -63,20 +77,36 @@ function Header() {
         }`}
       >
         <div className="bg-black px-4 space-y-4 text-gray-300">
-          <Link href="#portfolio" scroll={false} className="block hover:text-white transition">
+          <Link
+            href="/portfolio"
+            scroll={false}
+            className="block hover:text-white transition"
+          >
             Portfolio
           </Link>
-          <Link href="#services" scroll={false} className="block hover:text-white transition">
+          <Link
+            href="/services"
+            scroll={false}
+            className="block hover:text-white transition"
+          >
             Services
           </Link>
-          <Link href="#success" scroll={false} className="block hover:text-white transition">
+          <Link
+            href="/success"
+            scroll={false}
+            className="block hover:text-white transition"
+          >
             Client Success
           </Link>
-          <Link href="#about" scroll={false} className="block hover:text-white transition">
+          <Link
+            href="/about"
+            scroll={false}
+            className="block hover:text-white transition"
+          >
             About Us
           </Link>
           <div className="flex items-center space-x-4">
-            <FaWhatsapp className="text-green-500 text-lg cursor-pointer" />
+ 
             <button className="flex items-center space-x-2 bg-black border border-orange-500 text-white rounded-full px-4 py-2 hover:bg-orange-600 transition">
               <span>Get In Touch</span>
               <FaArrowRight className="text-orange-400" />

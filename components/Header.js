@@ -45,6 +45,14 @@ function Header() {
           >
             About Us
           </Link>
+
+          <Link
+            href="/tech"
+            scroll={false}
+            className="block hover:text-white transition"
+          >
+            Tech we use
+          </Link>
         </nav>
 
         {/* Buttons */}
@@ -105,8 +113,14 @@ function Header() {
           >
             About Us
           </Link>
+          <Link
+            href="/tech"
+            scroll={false}
+            className="block hover:text-white transition"
+          >
+            Tech we use
+          </Link>
           <div className="flex items-center space-x-4">
- 
             <button className="flex items-center space-x-2 bg-black border border-orange-500 text-white rounded-full px-4 py-2 hover:bg-orange-600 transition">
               <span>Get In Touch</span>
               <FaArrowRight className="text-orange-400" />

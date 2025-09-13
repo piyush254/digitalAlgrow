@@ -84,7 +84,7 @@ function About() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               { name: "Vivek Sharma", role: "Founder & CEO", img: "/team/ceo.jpg" },
-              { name: "Aarav Sharma", role: "Marketing Head", img: "/team/marketing.jpg" },
+              { name: "Piyush Kumar", role: "CO Founder & CTO", img: "/team/marketing.jpg" },
               { name: "Sneha Patel", role: "Creative Director", img: "/team/creative.jpg" },
               { name: "Rahul Verma", role: "Tech Lead", img: "/team/tech.jpg" },
             ].map((member, index) => (

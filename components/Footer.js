@@ -57,25 +57,25 @@ function Footer() {
                 Quick Links
               </h3>
               <a
-                href="#portfolio"
+                href="/portfolio"
                 className="hover:text-orange-500 transition duration-300"
               >
                 Portfolio
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="hover:text-orange-500 transition duration-300"
               >
                 Services
               </a>
               <a
-                href="#success"
+                href="/success"
                 className="hover:text-orange-500 transition duration-300"
               >
                 Client Success
               </a>
               <a
-                href="#about"
+                href="/about"
                 className="hover:text-orange-500 transition duration-300"
               >
                 About Us

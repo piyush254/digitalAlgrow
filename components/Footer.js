@@ -90,18 +90,18 @@ function Footer() {
               </h3>
               <div className="flex items-center space-x-2 hover:text-orange-500 transition">
                 <FaEnvelope className="text-orange-500" />
-                <a
+                <Link
                   href="mailto:help.digitalalgrow@gmail.com"
                   className="hover:underline break-all"
                 >
                   help.digitalalgrow@gmail.com
-                </a>
+                </Link>
               </div>
               <div className="flex items-center space-x-2 hover:text-orange-500 transition">
                 <FaPhone className="text-orange-500" />
-                <a href="tel:+917321884277" className="hover:underline">
+                <Link href="tel:+917321884277" className="hover:underline">
                   +91 73218 84277
-                </a>
+                </Link>
               </div>
             </div>
           </div>

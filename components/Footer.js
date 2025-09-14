@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link"; // ✅ Import Link from Next.js
 import {
   FaInstagram,
   FaFacebookF,
@@ -32,22 +33,22 @@ function Footer() {
 
               {/* Social Icons */}
               <div className="mt-4 flex justify-center sm:justify-start space-x-4">
-                <a
+                <Link
                   href="https://www.instagram.com/digitalalgrow.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-pink-500 hover:text-orange-500 transition-transform transform hover:scale-125 text-2xl shadow-lg p-2 rounded-full bg-gray-900"
                 >
                   <FaInstagram />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://www.facebook.com/profile.php?id=100087778149569"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-orange-500 transition-transform transform hover:scale-125 text-2xl shadow-lg p-2 rounded-full bg-gray-900"
                 >
                   <FaFacebookF />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -56,30 +57,30 @@ function Footer() {
               <h3 className="text-orange-500 font-semibold mb-2 text-lg">
                 Quick Links
               </h3>
-              <a
+              <Link
                 href="/portfolio"
                 className="hover:text-orange-500 transition duration-300"
               >
                 Portfolio
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services"
                 className="hover:text-orange-500 transition duration-300"
               >
                 Services
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/success"
                 className="hover:text-orange-500 transition duration-300"
               >
                 Client Success
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/about"
                 className="hover:text-orange-500 transition duration-300"
               >
                 About Us
-              </a>
+              </Link>
             </div>
 
             {/* Contact Info */}
